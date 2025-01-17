@@ -8,7 +8,8 @@ const Login = () => {
 
     const submithandler = (e) => {
         e.preventDefault()
-        console.log("Hello guys form submitted");
+        console.log("Email is: ", email);
+        console.log("Password is: ", password);
         
     }
 
@@ -24,9 +25,13 @@ const Login = () => {
                 onChange={(e)=>{
                     setEmail(e.target.value)
                     
-                }} required className='text-white font-semibold outline-none bg-transparent border-2 border-emerald-600 px-5 py-4 text-xl rounded-full placeholder:text-gray-400' type="email" placeholder='Enter your email'/>
-                <input required className='text-white font-semibold outline-none bg-transparent border-2 border-emerald-600 px-5 py-4 text-xl rounded-full placeholder:text-gray-400' type="password" placeholder='Enter password'/>
-                <button className='text-white font-semibold outline-none bg-emerald-600 hover:bg-emerald-700 px-32 py-3 text-lg rounded-full mt-10 placeholder:text-orange-400'>Log in</button>
+                }} required className='text-white font-semibold outline-none bg-transparent border-2 border-emerald-600 px-5 py-3 text-xl rounded-full placeholder:text-gray-400' type="email" placeholder='Enter your email'/>
+                <input value={password}
+                onChange={(e)=>{
+                    setPassword(e.target.value)
+                }}
+                required className='text-white font-semibold outline-none bg-transparent border-2 border-emerald-600 px-5 py-3 text-xl rounded-full placeholder:text-gray-400' type="password" placeholder='Enter password'/>
+                <button className='text-white font-semibold outline-none bg-emerald-600 hover:bg-emerald-700 px-32 py-3 text-lg rounded-full mt-6 placeholder:text-orange-400'>Log in</button>
             </form>
         </div>
     </div>
